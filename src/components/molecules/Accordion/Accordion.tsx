@@ -23,13 +23,12 @@ export const Accordion: React.FC<AccordionProps> = ({
   items,
   type = "single",
   defaultValue,
+  value,
+  onValueChange,
   collapsible = true,
   className,
-  ...rest
 }) => {
-  const sharedProps = {
-    className: [styles.root, className ?? ""].filter(Boolean).join(" "),
-  };
+  const rootClassName = [styles.root, className ?? ""].filter(Boolean).join(" ");
 
   const content = items.map((item) => (
     <RadixAccordion.Item key={item.value} value={item.value} disabled={item.disabled} className={styles.item}>
@@ -49,14 +48,27 @@ export const Accordion: React.FC<AccordionProps> = ({
 
   if (type === "multiple") {
     return (
-      <RadixAccordion.Root type="multiple" defaultValue={defaultValue as string[]} {...sharedProps} {...rest}>
+      <RadixAccordion.Root
+        type="multiple"
+        className={rootClassName}
+        defaultValue={defaultValue as string[] | undefined}
+        value={value as string[] | undefined}
+        onValueChange={onValueChange as ((v: string[]) => void) | undefined}
+      >
         {content}
       </RadixAccordion.Root>
     );
   }
 
   return (
-    <RadixAccordion.Root type="single" collapsible={collapsible} defaultValue={defaultValue as string} {...sharedProps} {...rest}>
+    <RadixAccordion.Root
+      type="single"
+      collapsible={collapsible}
+      className={rootClassName}
+      defaultValue={defaultValue as string | undefined}
+      value={value as string | undefined}
+      onValueChange={onValueChange as ((v: string) => void) | undefined}
+    >
       {content}
     </RadixAccordion.Root>
   );
