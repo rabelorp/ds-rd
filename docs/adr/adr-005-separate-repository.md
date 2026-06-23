@@ -10,9 +10,9 @@ O Design System poderia viver dentro do `site-rd-frontend` como um pacote local 
 
 ## Decisão
 
-**Repositório separado**: `git@github.com:rabelorp/ds-rd.git`
+**Repositório separado**: `git@github.com:rabelo-digital/ds-rd.git`
 
-O DS é publicado como `@rabelorp/ds-rd` no npm e consumido como dependência externa pelo `site-rd-frontend` e futuros projetos.
+O DS é publicado como `@rabelodigital/ds-rd` no npm e consumido como dependência externa pelo `site-rd-frontend` e futuros projetos.
 
 ## Consequências
 

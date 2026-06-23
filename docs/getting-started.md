@@ -3,11 +3,11 @@
 ## Instalação
 
 ```bash
-npm install @rabelorp/ds-rd
+npm install @rabelodigital/ds-rd
 # ou
-pnpm add @rabelorp/ds-rd
+pnpm add @rabelodigital/ds-rd
 # ou
-yarn add @rabelorp/ds-rd
+yarn add @rabelodigital/ds-rd
 ```
 
 > **Peer dependencies:** React ≥ 18 e react-dom ≥ 18 devem estar instalados no seu projeto.
@@ -19,7 +19,7 @@ yarn add @rabelorp/ds-rd
 Adicione em seu arquivo CSS global (ex: `globals.css`, `app/layout.tsx`, etc.):
 
 ```css
-@import "@rabelorp/ds-rd/tokens.css";
+@import "@rabelodigital/ds-rd/tokens.css";
 ```
 
 Isso define todas as CSS custom properties (`--ds-color-primary`, `--ds-space-4`, etc.) no `:root`.
@@ -29,7 +29,7 @@ Isso define todas as CSS custom properties (`--ds-color-primary`, `--ds-space-4`
 ## 2. Usar componentes
 
 ```tsx
-import { Button, Badge, Input } from "@rabelorp/ds-rd";
+import { Button, Badge, Input } from "@rabelodigital/ds-rd";
 
 export default function Page() {
   return (
@@ -47,7 +47,7 @@ export default function Page() {
 ## 3. Usar tokens TypeScript
 
 ```tsx
-import { semanticColors, spacing, typography } from "@rabelorp/ds-rd/tokens";
+import { semanticColors, spacing, typography } from "@rabelodigital/ds-rd/tokens";
 
 const primaryColor = semanticColors.primary.default; // "#02548B"
 const gap = spacing[4];                              // "16px"
@@ -62,7 +62,7 @@ Envolva sua aplicação com `ToastProvider`:
 
 ```tsx
 // app/layout.tsx ou _app.tsx
-import { ToastProvider } from "@rabelorp/ds-rd";
+import { ToastProvider } from "@rabelodigital/ds-rd";
 
 export default function RootLayout({ children }) {
   return (
@@ -73,7 +73,7 @@ export default function RootLayout({ children }) {
 }
 
 // Em qualquer componente filho:
-import { useToast } from "@rabelorp/ds-rd";
+import { useToast } from "@rabelodigital/ds-rd";
 
 function MyComponent() {
   const { show } = useToast();
@@ -92,7 +92,7 @@ function MyComponent() {
 Para usar Tooltips, envolva a aplicação com `TooltipProvider`:
 
 ```tsx
-import { TooltipProvider, Tooltip, Button } from "@rabelorp/ds-rd";
+import { TooltipProvider, Tooltip, Button } from "@rabelodigital/ds-rd";
 
 <TooltipProvider>
   <Tooltip content="Editar registro" side="top">
@@ -123,5 +123,5 @@ O DS é compatível com Next.js App Router e Pages Router. Para importar `tokens
 
 ```tsx
 // app/layout.tsx
-import "@rabelorp/ds-rd/tokens.css";
+import "@rabelodigital/ds-rd/tokens.css";
 ```

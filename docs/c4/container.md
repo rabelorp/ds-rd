@@ -2,7 +2,7 @@
 
 ```mermaid
 C4Container
-    title "@rabelorp/ds-rd — Containers"
+    title "@rabelodigital/ds-rd — Containers"
 
     Container(tokens, "tokens/", "TypeScript + CSS", "Design tokens: cores, espaçamento, tipografia, radii, elevation, z-index, motion, breakpoints. Exportados como constantes TS e CSS custom properties (tokens.css).")
 

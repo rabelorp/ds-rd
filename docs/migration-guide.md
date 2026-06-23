@@ -1,4 +1,4 @@
-# Guia de Migração — site-rd-frontend → @rabelorp/ds-rd
+# Guia de Migração — site-rd-frontend → @rabelodigital/ds-rd
 
 Este guia mapeia os caminhos de import legados do `site-rd-frontend` para os novos imports do Design System.
 
@@ -8,7 +8,7 @@ Este guia mapeia os caminhos de import legados do `site-rd-frontend` para os nov
 
 A migração é **incremental por componente**:
 
-1. Instalar `@rabelorp/ds-rd` no `site-rd-frontend`
+1. Instalar `@rabelodigital/ds-rd` no `site-rd-frontend`
 2. Importar `tokens.css` no `globals.css` (valide visualmente)
 3. Para cada componente: substituir o import legacy pelo import do DS
 4. Testar a página que usa o componente
@@ -22,18 +22,18 @@ A migração é **incremental por componente**:
 
 | Import legado | Import novo |
 |---------------|-------------|
-| `@/components/atoms/Badge` | `@rabelorp/ds-rd` |
-| `@/components/atoms/Input` | `@rabelorp/ds-rd` |
-| `@/components/atoms/Textarea` | `@rabelorp/ds-rd` |
-| `@/components/atoms/Toast` | `@rabelorp/ds-rd` (useToast + ToastProvider) |
-| `@/components/SocialIcons` | `@rabelorp/ds-rd` (SocialIcons) |
-| `@/components/TeamSocialIcons` | `@rabelorp/ds-rd` (SocialIcons com prop `links`) |
+| `@/components/atoms/Badge` | `@rabelodigital/ds-rd` |
+| `@/components/atoms/Input` | `@rabelodigital/ds-rd` |
+| `@/components/atoms/Textarea` | `@rabelodigital/ds-rd` |
+| `@/components/atoms/Toast` | `@rabelodigital/ds-rd` (useToast + ToastProvider) |
+| `@/components/SocialIcons` | `@rabelodigital/ds-rd` (SocialIcons) |
+| `@/components/TeamSocialIcons` | `@rabelodigital/ds-rd` (SocialIcons com prop `links`) |
 
 ### Molecules / Organisms
 
 | Import legado | Import novo |
 |---------------|-------------|
-| `@/components/organisms/ToastProvider` | `@rabelorp/ds-rd` (ToastProvider + useToast) |
+| `@/components/organisms/ToastProvider` | `@rabelodigital/ds-rd` (ToastProvider + useToast) |
 | `@/components/molecules/ToastContainer` | Incluído no ToastProvider do DS |
 
 ---
@@ -48,7 +48,7 @@ import Badge from "@/components/atoms/Badge";
 <Badge text="Ativo" color="green" />
 
 // Depois
-import { Badge } from "@rabelorp/ds-rd";
+import { Badge } from "@rabelodigital/ds-rd";
 <Badge variant="success">Ativo</Badge>
 ```
 
@@ -60,7 +60,7 @@ import SocialIcons from "@/components/SocialIcons";
 import TeamSocialIcons from "@/components/TeamSocialIcons";
 
 // Depois — um componente unificado com prop links
-import { SocialIcons } from "@rabelorp/ds-rd";
+import { SocialIcons } from "@rabelodigital/ds-rd";
 
 <SocialIcons links={[
   { platform: "linkedin", url: "https://linkedin.com/company/rabelodigital" },
@@ -76,11 +76,11 @@ import { useToast } from "@/components/atoms/Toast";
 import ToastContainer from "@/components/molecules/ToastContainer";
 
 // Depois — no layout raiz
-import { ToastProvider } from "@rabelorp/ds-rd";
+import { ToastProvider } from "@rabelodigital/ds-rd";
 <ToastProvider>{children}</ToastProvider>
 
 // Em qualquer componente filho
-import { useToast } from "@rabelorp/ds-rd";
+import { useToast } from "@rabelodigital/ds-rd";
 const { show } = useToast();
 show({ title: "Sucesso!", variant: "success" });
 ```
@@ -93,7 +93,7 @@ import Input from "@/components/atoms/Input";
 <Input label="Nome" />
 
 // Depois
-import { Input } from "@rabelorp/ds-rd";
+import { Input } from "@rabelodigital/ds-rd";
 <Input label="Nome" />
 // API idêntica — migração transparente
 ```

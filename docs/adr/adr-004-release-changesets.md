@@ -6,7 +6,7 @@
 
 ## Contexto
 
-O pacote `@rabelorp/ds-rd` precisa de um processo claro de versionamento semântico e geração de changelog. Cada PR que altera componentes ou tokens deve resultar em uma versão publicável com notas claras das mudanças.
+O pacote `@rabelodigital/ds-rd` precisa de um processo claro de versionamento semântico e geração de changelog. Cada PR que altera componentes ou tokens deve resultar em uma versão publicável com notas claras das mudanças.
 
 ## Decisão
 

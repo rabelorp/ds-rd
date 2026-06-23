@@ -1,5 +1,5 @@
 {
-  "name": "@rabelorp/ds-rd",
+  "name": "@rabelodigital/ds-rd",
   "version": "0.1.0",
   "description": "Rabelo Digital Design System",
   "keywords": [
@@ -9,10 +9,10 @@
     "tokens",
     "rabelo-digital"
   ],
-  "homepage": "https://github.com/rabelorp/ds-rd#readme",
+  "homepage": "https://github.com/rabelo-digital/ds-rd#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rabelorp/ds-rd.git"
+    "url": "git+https://github.com/rabelo-digital/ds-rd.git"
   },
   "license": "MIT",
   "author": "Rabelo Digital <contato@rabelodigital.com.br>",

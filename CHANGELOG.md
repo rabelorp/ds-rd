@@ -1,4 +1,4 @@
-# @rabelorp/ds-rd
+# @rabelodigital/ds-rd
 
 ## 0.1.0
 

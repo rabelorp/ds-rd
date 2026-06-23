@@ -8,7 +8,7 @@ type Story = StoryObj<typeof Accordion>;
 
 const items = [
   { value: "q1", trigger: "O que é o Design System?", content: "Um conjunto de tokens, componentes e padrões reutilizáveis." },
-  { value: "q2", trigger: "Como instalar?", content: "npm install @rabelorp/ds-rd" },
+  { value: "q2", trigger: "Como instalar?", content: "npm install @rabelodigital/ds-rd" },
   { value: "q3", trigger: "Posso personalizar os tokens?", content: "Sim, basta sobrescrever as CSS custom properties." },
 ];
 

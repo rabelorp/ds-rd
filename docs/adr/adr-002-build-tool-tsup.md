@@ -6,7 +6,7 @@
 
 ## Contexto
 
-O pacote `@rabelorp/ds-rd` precisa ser publicado no npm gerando saídas ESM, CJS e declarações TypeScript (`.d.ts`). A escolha do bundler afeta tempo de build, complexidade de configuração e compatibilidade com consumidores.
+O pacote `@rabelodigital/ds-rd` precisa ser publicado no npm gerando saídas ESM, CJS e declarações TypeScript (`.d.ts`). A escolha do bundler afeta tempo de build, complexidade de configuração e compatibilidade com consumidores.
 
 ## Decisão
 

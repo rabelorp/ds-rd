@@ -1,5 +1,5 @@
 ---
-"@rabelorp/ds-rd": minor
+"@rabelodigital/ds-rd": minor
 ---
 
 Initial release of the Rabelo Digital Design System.
