@@ -1,0 +1,62 @@
+# Claude Code — reduz leitura de arquivos irrelevantes para o agente
+# Sintaxe igual ao .gitignore. O .gitignore já é respeitado automaticamente.
+
+# Dependências e build
+node_modules/
+dist/
+build/
+coverage/
+.scannerwork/
+
+# Lockfiles
+package-lock.json
+yarn.lock
+yarn-error.log
+
+# Git interno
+.git/
+
+# Ambiente e credenciais
+.env
+.env.*
+!.env.example
+
+# Uploads e mídia de usuários
+private/
+uploads/
+
+# Certificados
+certs/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Binários e artefatos gerados
+*.mp3
+*.wav
+*.ogg
+*.m4a
+*.pdf
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.min.js
+*.map
+*.jpeg
+*.jpg
+*.png
+*.gif
+*.webp
+*.ico
+
+# Config gerada / sensível
+src/config/sentry.js
+
+# OpenSpec: histórico arquivado
+openspec/changes/archive/
+
+# IDE
+.idea/

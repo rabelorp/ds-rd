@@ -20,7 +20,7 @@ context: |
   - Repositório: `@rabelo-digital/ds-rd` (Design System React publicado no npm)
   - Linguagem: TypeScript; componentes React 18+; CSS Modules; tokens em TS + `tokens.css`
   - Build: tsup (ESM + CJS + `.d.ts`); Storybook 8; testes com Vitest + Testing Library
-  - Release: Changesets (`changesets/action` no CI)
+  - Release: standard-version + Commitizen; publicação no npm via workflow `publish.yml` em tags `v*`
   - Package manager do repo: **npm** (`npm ci`, `npm run <script>`) — não usar pnpm neste projeto
   - Commits: Conventional Commits; código/commits/PRs em inglês; documentação em PT-BR
 
@@ -29,7 +29,7 @@ rules:
     - Consulte `docs/adr/` e `docs/c4/` antes de propor mudanças arquiteturais
     - Não contradiga ADRs aceitos sem explicitar a necessidade de um novo ADR
   design:
-    - Alinhar com ADRs em `docs/adr/` (tokens, tsup, Radix/a11y, changesets, repo separado)
+    - Alinhar com ADRs em `docs/adr/` (tokens, tsup, Radix/a11y, standard-version, repo separado)
     - Componentes: CSS Modules + tokens (`var(--ds-*)`); evitar hex hardcoded e `style={{}}` inline
   tasks:
     - Scripts e CI usam npm (`npm run`, `npm ci`), nunca pnpm

@@ -1,0 +1,64 @@
+# Reduz indexação e contexto automático do Cursor (economia de tokens).
+# Sintaxe igual ao .gitignore. Arquivos ignorados ainda podem ser referenciados com @.
+
+# --- Dependências (~585 MB) ---
+node_modules/
+
+# --- Build, testes e análise (~30 MB) ---
+dist/
+build/
+coverage/
+.scannerwork/
+
+# --- Lock files (raramente necessários no contexto do agente) ---
+package-lock.json
+yarn.lock
+yarn-error.log
+
+# --- Controle de versão ---
+.git/
+
+# --- Ambiente e segredos ---
+.env
+.env.*
+!.env.example
+
+# --- Uploads e mídia de usuários (~7 MB+) ---
+private/
+uploads/
+
+# --- Certificados ---
+certs/
+
+# --- Logs ---
+logs/
+*.log
+npm-debug.log*
+
+# --- Binários e artefatos gerados ---
+*.mp3
+*.wav
+*.ogg
+*.m4a
+*.pdf
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.min.js
+*.map
+*.jpeg
+*.jpg
+*.png
+*.gif
+*.webp
+*.ico
+
+# --- Config gerada / sensível ---
+src/config/sentry.js
+
+# --- OpenSpec: histórico arquivado (~1.6 MB de mudanças antigas) ---
+openspec/changes/archive/
+
+# --- IDE (opcional) ---
+.idea/
