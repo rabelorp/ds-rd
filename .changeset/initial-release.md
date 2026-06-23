@@ -1,5 +1,5 @@
 ---
-"@rabelodigital/ds-rd": minor
+"@rabelo-digital/ds-rd": major
 ---
 
 Initial release of the Rabelo Digital Design System.
@@ -7,6 +7,7 @@ Initial release of the Rabelo Digital Design System.
 Includes:
 
 **Design Tokens**
+
 - Primitive and semantic color scales (brand blue #02548B, teal #16B597, orange #FF3C00)
 - Spacing scale (4px base grid, 0–32 steps)
 - Typography (fontFamily, fontSize xs–4xl, fontWeight, lineHeight, letterSpacing)
@@ -14,6 +15,7 @@ Includes:
 - CSS custom properties exported as `tokens.css` and TypeScript constants
 
 **Atom Components**
+
 - `Button` — 4 variants (primary/secondary/ghost/danger), 3 sizes, loading state
 - `Input` — label, error, helperText, sizes, forwardRef
 - `Textarea` — label, error, maxLength with live character counter
@@ -26,6 +28,7 @@ Includes:
 - `SocialIcons` — unified LinkedIn/Instagram/GitHub/X/Facebook/YouTube/WhatsApp
 
 **Molecule Components**
+
 - `Card` — compound pattern (Card.Header/Body/Footer), elevation/radius tokens
 - `Modal` — focus-trapped dialog, 5 sizes via Radix UI Dialog
 - `Drawer` — slide-in panel with 4 sides via Radix UI Dialog
@@ -35,11 +38,13 @@ Includes:
 - `Table` — compound (Head/Body/Row/Cell), sticky header, semantic scope
 
 **Accessibility**
+
 - WCAG 2.1 AA compliance across all components
 - WAI-ARIA patterns via Radix UI primitives
 - Focus management, keyboard navigation, screen reader support
 
 **Build**
+
 - ESM + CJS + TypeScript declarations
 - CSS Modules scoped to each component
 - Tree-shakeable via tsup splitting

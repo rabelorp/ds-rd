@@ -3,11 +3,11 @@
 ## Instalação
 
 ```bash
-npm install @rabelodigital/ds-rd
+npm install @rabelo-digital/ds-rd
 # ou
-pnpm add @rabelodigital/ds-rd
+pnpm add @rabelo-digital/ds-rd
 # ou
-yarn add @rabelodigital/ds-rd
+yarn add @rabelo-digital/ds-rd
 ```
 
 > **Peer dependencies:** React ≥ 18 e react-dom ≥ 18 devem estar instalados no seu projeto.
@@ -19,7 +19,7 @@ yarn add @rabelodigital/ds-rd
 Adicione em seu arquivo CSS global (ex: `globals.css`, `app/layout.tsx`, etc.):
 
 ```css
-@import "@rabelodigital/ds-rd/tokens.css";
+@import "@rabelo-digital/ds-rd/tokens.css";
 ```
 
 Isso define todas as CSS custom properties (`--ds-color-primary`, `--ds-space-4`, etc.) no `:root`.
@@ -29,7 +29,7 @@ Isso define todas as CSS custom properties (`--ds-color-primary`, `--ds-space-4`
 ## 2. Usar componentes
 
 ```tsx
-import { Button, Badge, Input } from "@rabelodigital/ds-rd";
+import { Button, Badge, Input } from "@rabelo-digital/ds-rd";
 
 export default function Page() {
   return (
@@ -47,11 +47,11 @@ export default function Page() {
 ## 3. Usar tokens TypeScript
 
 ```tsx
-import { semanticColors, spacing, typography } from "@rabelodigital/ds-rd/tokens";
+import { semanticColors, spacing, typography } from "@rabelo-digital/ds-rd/tokens";
 
 const primaryColor = semanticColors.primary.default; // "#02548B"
-const gap = spacing[4];                              // "16px"
-const fontSize = typography.fontSize.lg;             // "1.125rem"
+const gap = spacing[4]; // "16px"
+const fontSize = typography.fontSize.lg; // "1.125rem"
 ```
 
 ---
@@ -62,26 +62,18 @@ Envolva sua aplicação com `ToastProvider`:
 
 ```tsx
 // app/layout.tsx ou _app.tsx
-import { ToastProvider } from "@rabelodigital/ds-rd";
+import { ToastProvider } from "@rabelo-digital/ds-rd";
 
 export default function RootLayout({ children }) {
-  return (
-    <ToastProvider>
-      {children}
-    </ToastProvider>
-  );
+  return <ToastProvider>{children}</ToastProvider>;
 }
 
 // Em qualquer componente filho:
-import { useToast } from "@rabelodigital/ds-rd";
+import { useToast } from "@rabelo-digital/ds-rd";
 
 function MyComponent() {
   const { show } = useToast();
-  return (
-    <button onClick={() => show({ title: "Salvo!", variant: "success" })}>
-      Salvar
-    </button>
-  );
+  return <button onClick={() => show({ title: "Salvo!", variant: "success" })}>Salvar</button>;
 }
 ```
 
@@ -92,13 +84,13 @@ function MyComponent() {
 Para usar Tooltips, envolva a aplicação com `TooltipProvider`:
 
 ```tsx
-import { TooltipProvider, Tooltip, Button } from "@rabelodigital/ds-rd";
+import { TooltipProvider, Tooltip, Button } from "@rabelo-digital/ds-rd";
 
 <TooltipProvider>
   <Tooltip content="Editar registro" side="top">
     <Button size="sm">Editar</Button>
   </Tooltip>
-</TooltipProvider>
+</TooltipProvider>;
 ```
 
 ---
@@ -106,7 +98,7 @@ import { TooltipProvider, Tooltip, Button } from "@rabelodigital/ds-rd";
 ## Storybook
 
 Explore todos os componentes e seus estados em:  
-**[ds.rabelodigital.com.br](https://ds.rabelodigital.com.br)** *(em breve)*
+**[ds.rabelodigital.com.br](https://ds.rabelodigital.com.br)** _(em breve)_
 
 Para rodar o Storybook localmente (dentro do repo `ds-rd`):
 
@@ -123,5 +115,5 @@ O DS é compatível com Next.js App Router e Pages Router. Para importar `tokens
 
 ```tsx
 // app/layout.tsx
-import "@rabelodigital/ds-rd/tokens.css";
+import "@rabelo-digital/ds-rd/tokens.css";
 ```

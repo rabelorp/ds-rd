@@ -1,4 +1,4 @@
-# Guia de Migração — site-rd-frontend → @rabelodigital/ds-rd
+# Guia de Migração — site-rd-frontend → @rabelo-digital/ds-rd
 
 Este guia mapeia os caminhos de import legados do `site-rd-frontend` para os novos imports do Design System.
 
@@ -8,7 +8,7 @@ Este guia mapeia os caminhos de import legados do `site-rd-frontend` para os nov
 
 A migração é **incremental por componente**:
 
-1. Instalar `@rabelodigital/ds-rd` no `site-rd-frontend`
+1. Instalar `@rabelo-digital/ds-rd` no `site-rd-frontend`
 2. Importar `tokens.css` no `globals.css` (valide visualmente)
 3. Para cada componente: substituir o import legacy pelo import do DS
 4. Testar a página que usa o componente
@@ -20,21 +20,21 @@ A migração é **incremental por componente**:
 
 ### Atoms
 
-| Import legado | Import novo |
-|---------------|-------------|
-| `@/components/atoms/Badge` | `@rabelodigital/ds-rd` |
-| `@/components/atoms/Input` | `@rabelodigital/ds-rd` |
-| `@/components/atoms/Textarea` | `@rabelodigital/ds-rd` |
-| `@/components/atoms/Toast` | `@rabelodigital/ds-rd` (useToast + ToastProvider) |
-| `@/components/SocialIcons` | `@rabelodigital/ds-rd` (SocialIcons) |
-| `@/components/TeamSocialIcons` | `@rabelodigital/ds-rd` (SocialIcons com prop `links`) |
+| Import legado                  | Import novo                                            |
+| ------------------------------ | ------------------------------------------------------ |
+| `@/components/atoms/Badge`     | `@rabelo-digital/ds-rd`                                |
+| `@/components/atoms/Input`     | `@rabelo-digital/ds-rd`                                |
+| `@/components/atoms/Textarea`  | `@rabelo-digital/ds-rd`                                |
+| `@/components/atoms/Toast`     | `@rabelo-digital/ds-rd` (useToast + ToastProvider)     |
+| `@/components/SocialIcons`     | `@rabelo-digital/ds-rd` (SocialIcons)                  |
+| `@/components/TeamSocialIcons` | `@rabelo-digital/ds-rd` (SocialIcons com prop `links`) |
 
 ### Molecules / Organisms
 
-| Import legado | Import novo |
-|---------------|-------------|
-| `@/components/organisms/ToastProvider` | `@rabelodigital/ds-rd` (ToastProvider + useToast) |
-| `@/components/molecules/ToastContainer` | Incluído no ToastProvider do DS |
+| Import legado                           | Import novo                                        |
+| --------------------------------------- | -------------------------------------------------- |
+| `@/components/organisms/ToastProvider`  | `@rabelo-digital/ds-rd` (ToastProvider + useToast) |
+| `@/components/molecules/ToastContainer` | Incluído no ToastProvider do DS                    |
 
 ---
 
@@ -45,11 +45,11 @@ A migração é **incremental por componente**:
 ```tsx
 // Antes
 import Badge from "@/components/atoms/Badge";
-<Badge text="Ativo" color="green" />
+<Badge text="Ativo" color="green" />;
 
 // Depois
-import { Badge } from "@rabelodigital/ds-rd";
-<Badge variant="success">Ativo</Badge>
+import { Badge } from "@rabelo-digital/ds-rd";
+<Badge variant="success">Ativo</Badge>;
 ```
 
 ### SocialIcons
@@ -60,12 +60,14 @@ import SocialIcons from "@/components/SocialIcons";
 import TeamSocialIcons from "@/components/TeamSocialIcons";
 
 // Depois — um componente unificado com prop links
-import { SocialIcons } from "@rabelodigital/ds-rd";
+import { SocialIcons } from "@rabelo-digital/ds-rd";
 
-<SocialIcons links={[
-  { platform: "linkedin", url: "https://linkedin.com/company/rabelodigital" },
-  { platform: "instagram", url: "https://instagram.com/rabelodigital" },
-]} />
+<SocialIcons
+  links={[
+    { platform: "linkedin", url: "https://linkedin.com/company/rabelodigital" },
+    { platform: "instagram", url: "https://instagram.com/rabelodigital" }
+  ]}
+/>;
 ```
 
 ### Toast / Notificações
@@ -76,11 +78,11 @@ import { useToast } from "@/components/atoms/Toast";
 import ToastContainer from "@/components/molecules/ToastContainer";
 
 // Depois — no layout raiz
-import { ToastProvider } from "@rabelodigital/ds-rd";
-<ToastProvider>{children}</ToastProvider>
+import { ToastProvider } from "@rabelo-digital/ds-rd";
+<ToastProvider>{children}</ToastProvider>;
 
 // Em qualquer componente filho
-import { useToast } from "@rabelodigital/ds-rd";
+import { useToast } from "@rabelo-digital/ds-rd";
 const { show } = useToast();
 show({ title: "Sucesso!", variant: "success" });
 ```
@@ -90,11 +92,11 @@ show({ title: "Sucesso!", variant: "success" });
 ```tsx
 // Antes
 import Input from "@/components/atoms/Input";
-<Input label="Nome" />
+<Input label="Nome" />;
 
 // Depois
-import { Input } from "@rabelodigital/ds-rd";
-<Input label="Nome" />
+import { Input } from "@rabelo-digital/ds-rd";
+<Input label="Nome" />;
 // API idêntica — migração transparente
 ```
 
@@ -104,19 +106,19 @@ import { Input } from "@rabelodigital/ds-rd";
 
 Substitua os valores hardcoded pelos tokens CSS:
 
-| Valor antigo | Token CSS |
-|-------------|-----------|
-| `#02548B` | `var(--ds-color-primary)` |
-| `rgb(2, 84, 139)` | `var(--ds-color-primary)` |
-| `#16B597` / `rgb(22, 181, 151)` | `var(--ds-color-secondary)` |
-| `#FF3C00` | `var(--ds-color-accent)` |
-| `#FFEAE3` | `var(--ds-color-accent-subtle)` |
-| `#007bff` | `var(--ds-color-primary)` |
-| `#6c757d` | `var(--ds-color-text-muted)` |
-| `#dee2e6` | `var(--ds-color-border)` |
-| `#e9ecef` | `var(--ds-color-bg-muted)` |
-| `#f8f9fa` | `var(--ds-color-bg-subtle)` |
-| `#212529` | `var(--ds-color-text)` |
+| Valor antigo                    | Token CSS                       |
+| ------------------------------- | ------------------------------- |
+| `#02548B`                       | `var(--ds-color-primary)`       |
+| `rgb(2, 84, 139)`               | `var(--ds-color-primary)`       |
+| `#16B597` / `rgb(22, 181, 151)` | `var(--ds-color-secondary)`     |
+| `#FF3C00`                       | `var(--ds-color-accent)`        |
+| `#FFEAE3`                       | `var(--ds-color-accent-subtle)` |
+| `#007bff`                       | `var(--ds-color-primary)`       |
+| `#6c757d`                       | `var(--ds-color-text-muted)`    |
+| `#dee2e6`                       | `var(--ds-color-border)`        |
+| `#e9ecef`                       | `var(--ds-color-bg-muted)`      |
+| `#f8f9fa`                       | `var(--ds-color-bg-subtle)`     |
+| `#212529`                       | `var(--ds-color-text)`          |
 
 ---
 
@@ -137,7 +139,7 @@ Os seguintes componentes são **específicos do negócio** e não devem ser migr
 ## Checklist por Componente
 
 - [ ] Badge
-- [ ] Input  
+- [ ] Input
 - [ ] Textarea
 - [ ] Toast / useToast / ToastProvider
 - [ ] SocialIcons (unifica SocialIcons + TeamSocialIcons)

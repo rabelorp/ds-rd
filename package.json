@@ -1,6 +1,6 @@
 {
-  "name": "@rabelodigital/ds-rd",
-  "version": "0.1.0",
+  "name": "@rabelo-digital/ds-rd",
+  "version": "1.0.0",
   "description": "Rabelo Digital Design System",
   "keywords": [
     "design-system",
@@ -44,12 +44,30 @@
     "dev": "tsup --watch",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "vitest",
+    "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,css,md}\" \"*.{json,md,cjs}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,json,css,md}\" \"*.{json,md,cjs}\"",
     "typecheck": "tsc --noEmit",
+    "validate": "pnpm format:check && pnpm lint && pnpm typecheck",
+    "ci:check": "pnpm typecheck && pnpm lint && pnpm test && pnpm build",
     "changeset": "changeset",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "src/**/*.{json,css,md}": [
+      "prettier --write"
+    ],
+    "*.{json,md,cjs}": [
+      "prettier --write"
+    ]
   },
   "peerDependencies": {
     "react": ">=18.0.0",
@@ -57,6 +75,8 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
     "@size-limit/preset-small-lib": "^11.1.4",
     "@storybook/addon-a11y": "^8.2.9",
     "@storybook/addon-essentials": "^8.2.9",
@@ -74,10 +94,18 @@
     "@vitest/coverage-v8": "^2.0.5",
     "axe-playwright": "^2.0.1",
     "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^3.10.1",
+    "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-unused-imports": "4.4.1",
+    "husky": "8.0.1",
     "jsdom": "^24.1.1",
+    "lint-staged": "13.0.3",
+    "prettier": "^3.8.4",
     "size-limit": "^11.1.4",
     "storybook": "^8.2.9",
     "tsup": "^8.2.4",
