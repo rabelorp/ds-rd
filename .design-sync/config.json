@@ -1,0 +1,12 @@
+{
+  "projectId": "5c1728e0-7d0d-4e04-9b6f-08ee40bd5c75",
+  "shape": "storybook",
+  "pkg": "@rabelo-digital/ds-rd",
+  "storybookStatic": ".design-sync/sb-reference",
+  "titleMap": {
+    "Toast": "ToastProvider"
+  },
+  "tokensPkg": "@rabelo-digital/ds-rd",
+  "tokensGlob": "tokens.css",
+  "readmeHeader": ".design-sync/conventions.md"
+}

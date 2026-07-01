@@ -9,6 +9,6 @@ export default defineConfig({
   dts: {
     only: true,
   },
-  format: [],
+  format: ["esm", "cjs"],
   clean: false,
 });
